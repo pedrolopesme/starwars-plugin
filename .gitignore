@@ -1,0 +1,9 @@
+target/
+work/
+*.jar
+*.class
+.project
+.classpath
+.settings/
+bin/
+.java-version
