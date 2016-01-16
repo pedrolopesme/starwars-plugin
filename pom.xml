@@ -1,25 +1,61 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.jenkins-ci.plugins</groupId>
-  <artifactId>starwars.plugin</artifactId>
-  <version>0.1</version>
-  <packaging>jar</packaging>
+	<groupId>org.jenkins-ci.plugins</groupId>
+	<artifactId>starwars.plugin</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
 
-  <name>starwars.plugin</name>
-  <url>http://maven.apache.org</url>
+	<name>starwars.plugin</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<developers>
+		<developer>
+			<id>pedromendes</id>
+			<name>Pedro Mendes</name>
+			<email>pedrolopesme@gmail.com</email>
+			<timezone>America/Sao_Paulo</timezone>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<id>repo.jenkins-ci.org</id>
+			<url>http://repo.jenkins-ci.org/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<scm>
+		<connection>scm:git:git://github.com/pedrolopesme/starwars-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com/pedrolopesme/starwars-plugin.git</developerConnection>
+		<url>https://github.com/pedrolopesme/starwars-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo.jenkins-ci.org</id>
+			<url>http://repo.jenkins-ci.org/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>
