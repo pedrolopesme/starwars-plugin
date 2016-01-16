@@ -20,6 +20,7 @@
 			<name>Pedro Mendes</name>
 			<email>pedrolopesme@gmail.com</email>
 			<timezone>America/Sao_Paulo</timezone>
+			<organizationUrl>http://www.pedromendes.com.br</organizationUrl>
 		</developer>
 	</developers>
 
