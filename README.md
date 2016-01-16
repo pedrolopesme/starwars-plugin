@@ -8,9 +8,16 @@ classic pictures of Star Wars accordingly to the build result.
 
 Star Wars Jenkins Plugin is an **[OPEN Open Source Project](https://github.com/pedrolopesme/starwars-plugin/blob/master/CONTRIBUTING.md)**. Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit.
 
+### Thanks
+
+This project was highly inspired by **[Chuck Norris Plugin](https://github.com/jenkinsci/chucknorris-plugin)**
+
+
 ### License
 
 MIT. Copyright (c) [Pedro Mendes](http://www.pedromendes.com.br).
+
+
 
 
 
