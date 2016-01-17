@@ -4,6 +4,9 @@ This plugin adds an absolutely delightful feature to Jenkins:
 depending if your build succeeds, fails, or is unstable, it will show one of the 
 classic pictures of Star Wars accordingly to the build result.
 
+### Build Status
+[![Build Status](https://travis-ci.org/pedrolopesme/starwars-plugin.png?branch=master)](https://travis-ci.org/pedrolopesme/starwars-plugin)
+
 ### Contribute
 
 Star Wars Jenkins Plugin is an **[OPEN Open Source Project](https://github.com/pedrolopesme/starwars-plugin/blob/master/CONTRIBUTING.md)**. Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit.
