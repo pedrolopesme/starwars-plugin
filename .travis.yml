@@ -2,6 +2,8 @@ language: java
 script: mvn clean verify
 before_install:
   - sed -i.bak -e 's|https://nexus.codehaus.org/snapshots/|https://oss.sonatype.org/content/repositories/codehaus-snapshots/|g' ~/.m2/settings.xml
+ after_success:
+  - mvn clean cobertura:cobertura coveralls:report
 jdk:
   - openjdk6
 sudo: false
