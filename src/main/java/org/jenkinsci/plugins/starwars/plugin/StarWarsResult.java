@@ -10,7 +10,7 @@ import hudson.model.Result;
  */
 public enum StarWarsResult {
 	/**
-	 * When the light side wins!
+	 * When the light side wins.
 	 */
 	SUCCESS,
 	/**
