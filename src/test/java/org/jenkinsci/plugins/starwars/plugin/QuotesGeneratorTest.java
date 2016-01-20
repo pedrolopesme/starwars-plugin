@@ -13,7 +13,7 @@ public class QuotesGeneratorTest {
 		int totalAttempts = 100;
 		String lastQuote = null;
 		for (int i = 0; i < totalAttempts; i++) {
-			String currQuote = generator.random();
+			String currQuote = generator.generate();
 			if (lastQuote != null && !lastQuote.equals(currQuote)) {
 				return;
 			}

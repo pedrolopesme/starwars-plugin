@@ -32,7 +32,7 @@ public class QuotesGenerator {
 	 * 
 	 * @return a random quote
 	 */
-	public String random() {
+	public String generate() {
 		return QUOTES[RANDOM.nextInt(QUOTES.length)];
 	}
 }
