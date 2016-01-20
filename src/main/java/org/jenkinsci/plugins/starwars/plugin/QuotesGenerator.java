@@ -2,6 +2,11 @@ package org.jenkinsci.plugins.starwars.plugin;
 
 import java.util.Random;
 
+/**
+ * QuotesGenerator generate random famous classic quotes. 
+ *
+ * @author pedromendes
+ */
 public class QuotesGenerator {
 
 	/**
