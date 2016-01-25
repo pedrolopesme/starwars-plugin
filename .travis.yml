@@ -1,12 +1,13 @@
 language: java
 script: mvn clean verify
 secure: "dgTBsOutoa+Byzds9EFiQln/2G4gJ7xsW9hFlqjbt0fxdOcGLQnVj+zY1yk510YJo8+5dfZX8Cw7FBBdG7VX+vFpGP935VIBWFTEQAEAlGgrUr0M5/5zYYJRrchAbpJ4FYHN9HAKJukAlT1L07UJK2LRxEBRdmrWurzVP7JkXo9zSVceuk8FO6W7c/OIAouMpovClCKdWPzAZNCm6bF/Ih0R7ju9h3rAah9NRCaCf0ut15OBDIK7ude6+szZW0rqjV9HjVLvglHMFgBKxGVw+O4KW9rEwRLZDk0p5wk8aw4ttk40quc6y5yMyoX2zA+/8KieacvFB0EUaPsRFnHyl2+WB4xY6Bm2uWPXjw5U6U8LZFg65RxhIYir2agrUetiHpJnUqQgUPB2/zHBTnkXNQUny6+qqpHW/d3SPPw3U/xbKBlYl4OnPhmE2ZFkIu2eF/f3dBvjyDjKGN62Khokk8g75hjRJTet3TEZxnM8EoN7fKV13QtBboud/9Fkw+++58ZWO8ALplIvAqyLYLe1BsltDRLg5tjDs/5ZjwxPh1ihJ6MZ2GpO1O6p8Coj65cT9/wg7BNi5PgWHpYMu2UpqPTmh/5d1W7sJWJbO/6wLx2pnkoi1IQTQvbD1tZ8dfzIk7rqr2/TAuu+2JGaE7YXTqxgqAM5eDIDgipyfjTgEW0="
+jdk:
+  - openjdk6
+  - oraclejdk7
 before_install:
   - sed -i.bak -e 's|https://nexus.codehaus.org/snapshots/|https://oss.sonatype.org/content/repositories/codehaus-snapshots/|g' ~/.m2/settings.xml
  after_success:
   - mvn clean cobertura:cobertura coveralls:report
-jdk:
-  - openjdk6
 sudo: false
 cache:
   directories:
