@@ -1,5 +1,6 @@
-package org.jenkinsci.plugins.starwars.plugin;
+package hudson.plugins.starwars;
 
+import hudson.Extension;
 import hudson.model.AbstractProject;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Publisher;
@@ -9,6 +10,7 @@ import hudson.tasks.Publisher;
  *
  * @author pedromendes
  */
+@Extension
 public class StarWarsDescriptor  extends BuildStepDescriptor<Publisher> {
 
     /**

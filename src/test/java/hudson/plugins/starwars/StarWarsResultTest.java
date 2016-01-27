@@ -1,10 +1,11 @@
-package org.jenkinsci.plugins.starwars.plugin;
+package hudson.plugins.starwars;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import hudson.model.Result;
+import hudson.plugins.starwars.StarWarsResult;
 
 public class StarWarsResultTest {
 

@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.starwars.plugin;
+package hudson.plugins.starwars;
 
 import hudson.model.Result;
 

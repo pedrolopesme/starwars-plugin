@@ -5,12 +5,13 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.413</version>
+		<version>1.434</version>
 	</parent>
 
-	<artifactId>starwars.plugin</artifactId>
+	<groupId>org.jvnet.hudson.plugins</groupId>
+    <artifactId>starwars</artifactId>
 	<version>0.1</version>
-	<name>starwars.plugin</name>
+	<name>StarWars Plugin</name>
 	<description>Displays a picture of Star Wars (instead of Jenkins the butler) and a random Star Wars quote on each build page.</description>
 	<url>https://github.com/pedrolopesme/starwars-plugin</url>
 	<packaging>hpi</packaging>
@@ -28,6 +29,13 @@
 			<organizationUrl>http://www.pedromendes.com.br</organizationUrl>
 		</developer>
 	</developers>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
 
 	<repositories>
 		<repository>
@@ -57,7 +65,86 @@
 	</pluginRepositories>
 
 	<build>
-		<defaultGoal>package</defaultGoal>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<parallel>true</parallel>
+						<threadCount>10</threadCount>
+						<systemPropertyVariables>
+							<java.awt.headless>true</java.awt.headless>
+						</systemPropertyVariables>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.1</version>
+				</plugin>
+				<plugin>
+					<!--This plugin's configuration is used to store Eclipse m2e settings 
+						only. It has no influence on the Maven build itself. -->
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-dependency-plugin</artifactId>
+										<versionRange>[1.0,)</versionRange>
+										<goals>
+											<goal>copy-dependencies</goal>
+											<goal>unpack</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>hibernate3-maven-plugin</artifactId>
+										<versionRange>[2.2,)</versionRange>
+										<goals>
+											<goal>hbm2ddl</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.sonatype.flexmojos</groupId>
+										<artifactId>flexmojos-maven-plugin</artifactId>
+										<versionRange>[4.0-RC2,)</versionRange>
+										<goals>
+											<goal>compile-swc</goal>
+											<goal>compile-swf</goal>
+											<goal>copy-flex-resources</goal>
+											<goal>generate</goal>
+											<goal>test-compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -84,8 +171,9 @@
 					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
+
 		</plugins>
-	</build>
+	</reporting>
 
 	<dependencies>
 		<dependency>

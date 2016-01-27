@@ -1,13 +1,18 @@
-package org.jenkinsci.plugins.starwars.plugin;
-
-import static org.junit.Assert.fail;
+package hudson.plugins.starwars;
 
 import org.junit.Test;
 
-public class QuotesGeneratorTest {
+import hudson.plugins.starwars.QuotesGenerator;
+import junit.framework.TestCase;
 
-	private QuotesGenerator generator = new QuotesGenerator();
+public class QuotesGeneratorTest extends TestCase {
 
+	private QuotesGenerator generator;
+
+	public void setUp() {
+		generator = new QuotesGenerator();
+	}
+	
 	@Test
 	public void testRandomShouldGivesDiferentQuotes() {
 		int totalAttempts = 100;

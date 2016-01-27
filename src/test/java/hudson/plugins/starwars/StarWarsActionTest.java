@@ -1,8 +1,12 @@
-package org.jenkinsci.plugins.starwars.plugin;
+package hudson.plugins.starwars;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import hudson.plugins.starwars.QuotesGenerator;
+import hudson.plugins.starwars.StarWarsAction;
+import hudson.plugins.starwars.StarWarsResult;
 
 public class StarWarsActionTest {
 

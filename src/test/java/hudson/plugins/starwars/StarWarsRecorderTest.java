@@ -1,4 +1,4 @@
-package org.jenkinsci.plugins.starwars.plugin;
+package hudson.plugins.starwars;
 
 import static org.mockito.Mockito.*;
 
@@ -12,6 +12,10 @@ import hudson.model.Action;
 import hudson.model.Build;
 import hudson.model.BuildListener;
 import hudson.model.Result;
+import hudson.plugins.starwars.QuotesGenerator;
+import hudson.plugins.starwars.StarWarsAction;
+import hudson.plugins.starwars.StarWarsRecorder;
+import hudson.plugins.starwars.StarWarsResult;
 import junit.framework.TestCase;
 
 public class StarWarsRecorderTest extends TestCase {

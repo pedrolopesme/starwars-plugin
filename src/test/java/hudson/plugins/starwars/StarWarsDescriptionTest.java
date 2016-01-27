@@ -1,8 +1,9 @@
-package org.jenkinsci.plugins.starwars.plugin;
+package hudson.plugins.starwars;
 
 import static org.mockito.Mockito.*;
 
 import hudson.model.AbstractProject;
+import hudson.plugins.starwars.StarWarsDescriptor;
 import junit.framework.TestCase;
 
 public class StarWarsDescriptionTest extends TestCase {
