@@ -34,4 +34,23 @@ public class StarWarsResultTest {
 		assertEquals(StarWarsResult.ALERT, StarWarsResult.get(Result.UNSTABLE));
 	}
 
+	@Test
+	public void testSuccessStringGivesStarWarsSuccess() {
+		assertEquals(StarWarsResult.SUCCESS, StarWarsResult.get("success"));
+	}
+
+	@Test
+	public void testAlertStringGivesStarWarsAlert() {
+		assertEquals(StarWarsResult.ALERT, StarWarsResult.get("alert"));
+	}
+	
+	@Test
+	public void testFailStringGivesStarWarsFail() {
+		assertEquals(StarWarsResult.FAIL, StarWarsResult.get("fail"));
+	}
+	
+	@Test
+	public void testInsertStringGivesNull() {
+		assertEquals(null, StarWarsResult.get("foobar"));
+	}
 }

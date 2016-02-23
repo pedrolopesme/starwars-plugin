@@ -1,6 +1,7 @@
 package hudson.plugins.starwars;
 
 import hudson.model.Action;
+import hudson.plugins.starwars.quotes.Quote;
 
 /**
  * StarWarsAction keeps the result and quote associated with a action.
@@ -17,7 +18,7 @@ public class StarWarsAction implements Action {
 	/**
 	 * The quote
 	 */
-	private String quote;
+	private Quote quote;
 
 	/**
 	 * Constructs a StarWarsAction with specified result and quote.
@@ -25,7 +26,7 @@ public class StarWarsAction implements Action {
 	 * @param result
 	 * @param quote
 	 */
-	public StarWarsAction(StarWarsResult result, String quote) {
+	public StarWarsAction(StarWarsResult result, Quote quote) {
 		super();
 		this.result = result;
 		this.quote = quote;
@@ -48,7 +49,7 @@ public class StarWarsAction implements Action {
 	}
 
 	public String getQuote() {
-		return quote;
+		return quote.getQuote();
 	}
 
 }

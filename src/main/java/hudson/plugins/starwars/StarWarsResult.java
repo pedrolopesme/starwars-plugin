@@ -9,6 +9,7 @@ import hudson.model.Result;
  *
  */
 public enum StarWarsResult {
+
 	/**
 	 * When the light side wins.
 	 */
@@ -25,15 +26,33 @@ public enum StarWarsResult {
 	/**
 	 * Gets the style corresponding to the build result.
 	 * 
-	 * @param  the native hudson result
+	 * @param the native hudson result
 	 * @return the star wars result
 	 */
-	public static final StarWarsResult get(final Result result) {
+	public static StarWarsResult get(Result result) {
 		if (Result.SUCCESS.equals(result)) {
 			return SUCCESS;
 		} else if (Result.FAILURE.equals(result)) {
 			return FAIL;
 		}
 		return ALERT;
+	}
+
+	/**
+	 * Gets the style corresponding to its String representation
+	 * 
+	 * @param the string result presentation
+	 * 
+	 * @return the star wars result
+	 */
+	public static StarWarsResult get(String result) {
+		if (result.equals("success")) {
+			return SUCCESS;
+		} else if (result.equals("fail")) {
+			return FAIL;
+		} else if (result.equals("alert")) {
+			return ALERT;
+		}
+		return null;
 	}
 }

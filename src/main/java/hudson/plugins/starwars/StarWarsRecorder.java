@@ -11,6 +11,8 @@ import hudson.model.AbstractProject;
 import hudson.model.Action;
 import hudson.model.BuildListener;
 import hudson.model.Result;
+import hudson.plugins.starwars.quotes.Quote;
+import hudson.plugins.starwars.quotes.QuotesGenerator;
 import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Recorder;
 
@@ -64,8 +66,8 @@ public class StarWarsRecorder extends Recorder {
 		if (project.getLastBuild() != null) {
 			Result result = project.getLastBuild().getResult();
 			StarWarsResult starWarsResult = StarWarsResult.get(result);
-			String starWarsQuote = quotesGenerator.generate();
-			action = new StarWarsAction(starWarsResult, starWarsQuote);
+			Quote quote = quotesGenerator.generate(starWarsResult);
+			action = new StarWarsAction(starWarsResult, quote);
 		}
 		return action;
 	}
@@ -85,8 +87,8 @@ public class StarWarsRecorder extends Recorder {
 	public final boolean perform(final AbstractBuild<?, ?> build, final Launcher launcher, final BuildListener listener)
 			throws InterruptedException, IOException {
 		StarWarsResult result = StarWarsResult.get(build.getResult());
-		String fact = quotesGenerator.generate();
-		build.getActions().add(new StarWarsAction(result, fact));
+		Quote quote = quotesGenerator.generate(result);
+		build.getActions().add(new StarWarsAction(result, quote));
 		return true;
 	}
 

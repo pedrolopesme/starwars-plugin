@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quotes>
+	<quote author="luke" result="success">
+		Teste - SUCESS
+	</quote>
+	<quote author="luke" result="fail">
+		Teste - SUCESS
+	</quote>
+	<quote author="luke" result="alert">
+		Teste - SUCESS
+	</quote>
+</quotes>
