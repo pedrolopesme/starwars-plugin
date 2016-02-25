@@ -71,7 +71,7 @@ public enum QuoteAuthor {
 		if (LUKE_XML_IDENTIFIER.equals(name)) {
 			return LUKE;
 		} else if (DARTH_VADER_XML_IDENTIFIER.equals(name)) {
-			return LUKE;
+			return DARTH_VADER;
 		}
 		return null;
 	}

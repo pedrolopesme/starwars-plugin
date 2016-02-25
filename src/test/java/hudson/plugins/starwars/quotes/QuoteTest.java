@@ -5,7 +5,7 @@ import org.junit.Test;
 import hudson.plugins.starwars.StarWarsResult;
 import junit.framework.TestCase;
 
-public class QuotesTest extends TestCase {
+public class QuoteTest extends TestCase {
 
 	@Test
 	public void testQuotesEquality() {
