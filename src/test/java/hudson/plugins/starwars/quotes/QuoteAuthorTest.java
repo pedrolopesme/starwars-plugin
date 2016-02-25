@@ -15,4 +15,14 @@ public class QuoteAuthorTest extends TestCase {
 	public void testAuthorStringGivesDarthVader() {
 		assertEquals(QuoteAuthor.DARTH_VADER, QuoteAuthor.get("darthVader"));
 	}
+	
+	@Test
+	public void testAuthorStringGivesYoda() {
+		assertEquals(QuoteAuthor.YODA, QuoteAuthor.get("yoda"));
+	}
+	
+	@Test
+	public void testAuthorStringGivesHanSolo() {
+		assertEquals(QuoteAuthor.HAN_SOLO, QuoteAuthor.get("hanSolo"));
+	}
 }
