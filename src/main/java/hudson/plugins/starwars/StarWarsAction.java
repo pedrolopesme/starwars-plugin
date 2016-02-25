@@ -48,8 +48,14 @@ public class StarWarsAction implements Action {
 		return result;
 	}
 
-	public String getQuote() {
-		return quote.getQuote();
+	public Quote getQuote() {
+		return quote;
 	}
-
+	
+	public String getQuoteContent() {
+		if(quote != null) {
+			return quote.getQuote();	
+		}
+		return null;
+	}
 }

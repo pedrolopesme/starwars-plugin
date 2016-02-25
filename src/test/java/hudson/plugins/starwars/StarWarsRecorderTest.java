@@ -75,7 +75,7 @@ public class StarWarsRecorderTest extends TestCase {
 
 		StarWarsAction action = (StarWarsAction) actions.get(0);
 		assertEquals(StarWarsResult.FAIL, action.getResult());
-		assertEquals(expectedQuote.getQuote(), action.getQuote());
+		assertEquals(expectedQuote, action.getQuote());
 	}
 
 	private Quote generateQuote(StarWarsResult result){

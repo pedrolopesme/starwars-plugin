@@ -1,4 +1,4 @@
-package hudson.plugins.starwars;
+package hudson.plugins.starwars.quotes;
 
 import org.junit.Test;
 

@@ -13,15 +13,15 @@ public class StarWarsActionTest {
 	public void testAccessors() {
 		StarWarsResult result = StarWarsResult.SUCCESS;
 		
-		Quote quote = new Quote();
-		quote.setQuote("Foo bar");
-		quote.setAuthor(QuoteAuthor.LUKE);
-		quote.setResult(result);
+		Quote exptectedQuote = new Quote();
+		exptectedQuote.setQuote("Foo bar");
+		exptectedQuote.setAuthor(QuoteAuthor.LUKE);
+		exptectedQuote.setResult(result);
 
-		StarWarsAction action = new StarWarsAction(result, quote);
+		StarWarsAction action = new StarWarsAction(result, exptectedQuote);
 		assertEquals(StarWarsResult.SUCCESS, action.getResult());
 		assertEquals(result, action.getResult());
-		assertEquals(quote.getQuote(), action.getQuote());
+		assertEquals(exptectedQuote, action.getQuote());
 	}
 
 }
