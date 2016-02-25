@@ -1,6 +1,7 @@
 package hudson.plugins.starwars;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -22,6 +23,13 @@ public class StarWarsActionTest {
 		assertEquals(StarWarsResult.SUCCESS, action.getResult());
 		assertEquals(result, action.getResult());
 		assertEquals(exptectedQuote, action.getQuote());
+		assertEquals(exptectedQuote.getQuote(), action.getQuoteContent());
+		
 	}
 
+	@Test
+	public void testNullQuoteContent() {
+		StarWarsAction action = new StarWarsAction(null, null);
+		assertNull(action.getQuoteContent());
+	}
 }
