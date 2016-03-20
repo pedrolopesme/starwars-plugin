@@ -13,16 +13,44 @@ public enum StarWarsResult {
 	/**
 	 * When the light side wins.
 	 */
-	SUCCESS,
+	SUCCESS("success"),
+	
 	/**
 	 * Now Yoda become worried.
 	 */
-	ALERT,
+	ALERT("alert"),
+	
 	/**
 	 * When there's a disturbing lack of faith.
 	 */
-	FAIL;
+	FAIL("fail");
 
+	
+	/**
+	 * Result's description
+	 */
+	private String description;
+	
+	
+	/**
+	 * Return result's description
+	 * 
+	 * @return result's name
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * Constructor using description
+	 * 
+	 * @param description
+	 */
+	StarWarsResult(String description) {
+		this.description = description;
+	}
+	
+	
 	/**
 	 * Gets the style corresponding to the build result.
 	 * 
@@ -46,11 +74,11 @@ public enum StarWarsResult {
 	 * @return the star wars result
 	 */
 	public static StarWarsResult get(String result) {
-		if (result.equals("success")) {
+		if (SUCCESS.getDescription().equals("success")) {
 			return SUCCESS;
-		} else if (result.equals("fail")) {
+		} else if (FAIL.getDescription().equals("fail")) {
 			return FAIL;
-		} else if (result.equals("alert")) {
+		} else if (ALERT.getDescription().equals("alert")) {
 			return ALERT;
 		}
 		return null;

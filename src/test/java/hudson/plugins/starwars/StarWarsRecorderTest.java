@@ -1,6 +1,7 @@
 package hudson.plugins.starwars;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,6 @@ import hudson.model.Action;
 import hudson.model.Build;
 import hudson.model.BuildListener;
 import hudson.model.Result;
-import hudson.plugins.starwars.StarWarsAction;
-import hudson.plugins.starwars.StarWarsRecorder;
-import hudson.plugins.starwars.StarWarsResult;
 import hudson.plugins.starwars.quotes.Quote;
 import hudson.plugins.starwars.quotes.QuoteAuthor;
 import hudson.plugins.starwars.quotes.QuotesGenerator;

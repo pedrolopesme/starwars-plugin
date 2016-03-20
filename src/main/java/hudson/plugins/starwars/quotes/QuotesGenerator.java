@@ -31,10 +31,26 @@ public class QuotesGenerator {
 	private static final QuotesParser quotesParser = new QuotesParser();
 
 	/**
+	 * Default constructor - loads quotes
+	 */
+	public QuotesGenerator() {
+		loadQuotes();
+	}
+
+	/**
+	 * Alternative constructor - allows start instance without quotes loading.
+	 */
+	public QuotesGenerator(boolean loadQuotes) {
+		if (loadQuotes) {
+			loadQuotes();
+		}
+	}
+	
+	/**
 	 * Load quotes from quotes.xml
 	 */
 	public void loadQuotes() {
-		Set<Quote> quotes = quotesParser.parseXml();
+		Set<Quote> quotes = quotesParser.getQuotes();
 		if (quotes != null && quotes.size() > 0) {
 			for (Quote quote : quotes) {
 				add(quote);
@@ -60,10 +76,6 @@ public class QuotesGenerator {
 	 * @return a random quote
 	 */
 	public Quote generate(StarWarsResult result) {
-		if (quotes == null || quotes.size() == 0) {
-			loadQuotes();
-		}
-
 		ArrayList<Quote> resulQuotes = quotes.get(result);
 		if (resulQuotes != null && resulQuotes.size() > 0) {
 			int maxIndex = resulQuotes.size() - 1;
@@ -71,6 +83,15 @@ public class QuotesGenerator {
 			return resulQuotes.get(randomIndex);
 		}
 		return null;
+	}
+
+	/**
+	 * Return loaded quotes
+	 * 
+	 * @return
+	 */
+	public Map<StarWarsResult, ArrayList<Quote>> getQuotes() {
+		return quotes;
 	}
 
 }

@@ -11,33 +11,29 @@ public enum QuoteAuthor {
 	 * "I am a Jedi, like my father before me" -
 	 * http://starwars.wikia.com/wiki/Luke_Skywalker
 	 */
-	LUKE("Luke Skywalker", "luke.jpg"),
+	LUKE("Luke Skywalker", "luke.jpg", "luke"),
 
 	/**
 	 * "Anakin Skywalker was a Force-sensitive Human male who served the Galactic Empire as the Sith Lord Darth Vader"
 	 * http://starwars.wikia.com/wiki/Darth_Vader
 	 */
-	DARTH_VADER("Darth Vader", "darth.jpg"),
+	DARTH_VADER("Darth Vader", "darth.jpg", "darthVader"),
 
 	/**
 	 * "Yoda was one of the most renowned and powerful Jedi Masters in galactic history"
 	 * http://starwars.wikia.com/wiki/Yoda
 	 */
-	YODA("Yoda", "yoda.jpg"),
+	YODA("Yoda", "yoda.jpg", "yoda"),
 
 	/**
 	 * "Han Solo was a male Human smuggler from the manufacturing planet Corellia who achieved galactic fame as a member of the Rebel Alliance"
 	 * http://starwars.wikia.com/wiki/Han_Solo/Legends
 	 */
-	HAN_SOLO("Han Solo", "hansolo.jpg");
+	HAN_SOLO("Han Solo", "hansolo.jpg", "hanSolo");
 
 	/**
 	 * XML identifiers
 	 */
-	private static final String LUKE_XML_IDENTIFIER = "luke";
-	private static final String DARTH_VADER_XML_IDENTIFIER = "darthVader";
-	private static final String YODA_XML_IDENTIFIER = "yoda";
-	private static final String HAN_SOLO_XML_IDENTIFIER = "hanSolo";
 
 	/**
 	 * Author's name
@@ -50,14 +46,21 @@ public enum QuoteAuthor {
 	private String icon;
 
 	/**
-	 * Constructor using name, and icon
+	 * Plain xml's name
+	 */
+	private String xmlName;
+	
+	/**
+	 * Constructor using name, icon, xmlName
 	 * 
 	 * @param name
 	 * @param icon
+	 * @param xmlName
 	 */
-	QuoteAuthor(String name, String icon) {
+	QuoteAuthor(String name, String icon, String xmlName) {
 		this.name = name;
 		this.icon = icon;
+		this.xmlName = xmlName;
 	}
 
 	/**
@@ -79,16 +82,25 @@ public enum QuoteAuthor {
 	}
 
 	/**
+	 * Return author's xml name
+	 * 
+	 * @return author's xml name
+	 */
+	public String getXmlName() {
+		return xmlName;
+	}
+	
+	/**
 	 * Return author accordingly to his name.
 	 */
 	public static QuoteAuthor get(String name) {
-		if (LUKE_XML_IDENTIFIER.equals(name)) {
+		if (LUKE.getXmlName().equals(name)) {
 			return LUKE;
-		} else if (DARTH_VADER_XML_IDENTIFIER.equals(name)) {
+		} else if (DARTH_VADER.getXmlName().equals(name)) {
 			return DARTH_VADER;
-		} else if (YODA_XML_IDENTIFIER.equals(name)) {
+		} else if (YODA.getXmlName().equals(name)) {
 			return YODA;
-		} else if (HAN_SOLO_XML_IDENTIFIER.equals(name)) {
+		} else if (HAN_SOLO.getXmlName().equals(name)) {
 			return HAN_SOLO;
 		}
 		return null;

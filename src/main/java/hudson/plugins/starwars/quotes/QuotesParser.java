@@ -33,7 +33,7 @@ public class QuotesParser {
 	/**
 	 * Constant with default quotes path
 	 */
-	private static String DEFAULT_QUOTES_PATH = "src/main/resources/quotes.xml";
+	public static String DEFAULT_QUOTES_PATH = "src/main/resources/quotes.xml";
 
 	/**
 	 * Quotes path
@@ -43,14 +43,21 @@ public class QuotesParser {
 	/**
 	 * Load quotes XML and parse it
 	 */
-	public Set<Quote> parseXml() {
+	public Set<Quote> getQuotes() {
+		Document document = loadXml();
+		return parseQuotesDocument(document);
+	}
+
+	/**
+	 * Parse Quotes Document
+	 */
+	public Set<Quote> parseQuotesDocument(Document document) {
 		try {
+
 			Set<Quote> quotes = new HashSet<Quote>();
-
-			Document document = loadXml(quotesPath);
 			NodeList quoteNodes = document.getElementsByTagName("quote");
-			for (int temp = 0; temp < quoteNodes.getLength(); temp++) {
 
+			for (int temp = 0; temp < quoteNodes.getLength(); temp++) {
 				Node node = quoteNodes.item(temp);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {
 					Element quoteElement = (Element) node;
@@ -71,9 +78,8 @@ public class QuotesParser {
 				}
 			}
 			return quotes;
-
-		} catch (Exception e) {
-			LOGGER.severe("It was not possible to parse quotes XML. Cause : " + e.getStackTrace());
+		} catch (Exception ex) {
+			LOGGER.severe("It was not possible to parse quotes XML. Cause : " + ex.getStackTrace());
 			return null;
 		}
 	}
@@ -85,16 +91,21 @@ public class QuotesParser {
 	 * @throws IOException
 	 * @throws SAXException
 	 */
-	private Document loadXml(String path) throws ParserConfigurationException, SAXException, IOException {
-		File fXmlFile = new File(path);
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document document = db.parse(fXmlFile);
+	public Document loadXml()  {
+		try {
+			File xmlFile = new File(getQuotesPath());
+			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+			Document document = docBuilder.parse(xmlFile);
 
-		// http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-		document.getDocumentElement().normalize();
+			// http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+			document.getDocumentElement().normalize();
 
-		return document;
+			return document;
+		} catch(Exception ex) {
+			LOGGER.severe("It was not possible to load quotes XML. Cause : " + ex.getStackTrace());
+			return null;
+		}
 	}
 
 	/**

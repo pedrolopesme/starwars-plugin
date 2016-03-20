@@ -63,4 +63,9 @@ public class Quote {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Quote [quote=" + quote + ", author=" + author + ", result=" + result + "]";
+	}
+
 }
