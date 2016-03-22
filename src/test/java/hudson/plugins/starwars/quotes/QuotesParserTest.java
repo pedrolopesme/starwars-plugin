@@ -98,8 +98,8 @@ public class QuotesParserTest extends TestCase {
 		while(iterator.hasNext()){
 			lastQuote=iterator.next();
 		}
-		expectedQuote.setQuote("Test-5");
-		assertTrue(lastQuote.equals(expectedQuote));
+		expectedQuote.setQuote("Test-4");
+		assertEquals(expectedQuote, lastQuote);
 	}
 
 	private Document getDocument(Quote quote, int quotesQnt) throws ParserConfigurationException {
