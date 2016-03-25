@@ -45,7 +45,7 @@ public class QuotesParserTest extends TestCase {
 
 		Quote expectedQuote = new Quote();
 		expectedQuote.setAuthor(QuoteAuthor.LUKE);
-		expectedQuote.setQuote("Test");
+		expectedQuote.setQuote("FailedTest-1");
 		expectedQuote.setResult(StarWarsResult.FAIL);
 		
 		Document dummyDocument = getDocument(expectedQuote, 1);
@@ -61,14 +61,17 @@ public class QuotesParserTest extends TestCase {
 
 		Quote firstQuote = result.iterator().next();
 		assertFalse(firstQuote.equals(expectedQuote));
-
+		
+		expectedQuote = new Quote();
+		expectedQuote.setAuthor(QuoteAuthor.LUKE);
 		expectedQuote.setQuote("Test-1");
 		expectedQuote.setResult(StarWarsResult.SUCCESS);
+		dummyDocument = getDocument(expectedQuote, 1);
 		result = parser.parseQuotesDocument(dummyDocument);
-
+		
 		Iterator<Quote> iterator = result.iterator();
 		firstQuote = iterator.next();
-		assertTrue(firstQuote.equals(expectedQuote));
+		assertEquals(expectedQuote, firstQuote);
 	}
 
 	@Test
@@ -78,11 +81,11 @@ public class QuotesParserTest extends TestCase {
 		Quote expectedQuote = new Quote();
 		expectedQuote.setAuthor(QuoteAuthor.LUKE);
 		expectedQuote.setQuote("Test");
-		expectedQuote.setResult(StarWarsResult.FAIL);
+		expectedQuote.setResult(StarWarsResult.SUCCESS);
 		
 		Document dummyDocument = getDocument(expectedQuote, 5);
 
-		QuotesParser parser = new QuotesParser();
+		QuotesParser parser = new QuotesParser();		
 		Set<Quote> result = parser.parseQuotesDocument(dummyDocument);
 
 		assertEquals(result.size(), 5);
@@ -90,7 +93,6 @@ public class QuotesParserTest extends TestCase {
 		firstQuote.setQuote("Test-1");
 		assertFalse(firstQuote.equals(expectedQuote));
 
-		expectedQuote.setResult(StarWarsResult.SUCCESS);
 		result = parser.parseQuotesDocument(dummyDocument);
 
 		Quote lastQuote = null;
@@ -98,7 +100,7 @@ public class QuotesParserTest extends TestCase {
 		while(iterator.hasNext()){
 			lastQuote=iterator.next();
 		}
-		expectedQuote.setQuote("Test-4");
+		expectedQuote.setQuote("Test-5");
 		assertEquals(expectedQuote, lastQuote);
 	}
 
@@ -113,7 +115,7 @@ public class QuotesParserTest extends TestCase {
 
 		for (int i = 1; i <= quotesQnt; i++) {
 			Element quoteElement = doc.createElement("quote");
-			quoteElement.appendChild(doc.createTextNode(quote.getQuote() + "-" + i));
+			quoteElement.appendChild(doc.createTextNode("Test-" + i));
 			quoteElement.setAttribute("author", quote.getAuthor().getXmlName());
 			quoteElement.setAttribute("result", quote.getResult().getDescription());
 			rootElement.appendChild(quoteElement);

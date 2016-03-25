@@ -2,7 +2,7 @@ package hudson.plugins.starwars.quotes;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -56,7 +56,7 @@ public class QuotesParser {
 	public Set<Quote> parseQuotesDocument(Document document) {
 		try {
 
-			Set<Quote> quotes = new HashSet<Quote>();
+			Set<Quote> quotes = new LinkedHashSet<Quote>();
 			NodeList quoteNodes = document.getElementsByTagName("quote");
 
 			for (int temp = 0; temp < quoteNodes.getLength(); temp++) {

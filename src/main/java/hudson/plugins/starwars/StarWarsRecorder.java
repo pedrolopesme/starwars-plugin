@@ -1,8 +1,8 @@
 package hudson.plugins.starwars;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
+import org.apache.log4j.Logger;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import hudson.Launcher;

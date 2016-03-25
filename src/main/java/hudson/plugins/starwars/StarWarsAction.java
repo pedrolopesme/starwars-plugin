@@ -1,5 +1,7 @@
 package hudson.plugins.starwars;
 
+import org.apache.log4j.Logger;
+
 import hudson.model.Action;
 import hudson.plugins.starwars.quotes.Quote;
 
@@ -51,10 +53,15 @@ public class StarWarsAction implements Action {
 	public Quote getQuote() {
 		return quote;
 	}
-	
+
+	/**
+	 * Returning quote content
+	 * 
+	 * @return quote text
+	 */
 	public String getQuoteContent() {
-		if(quote != null) {
-			return quote.getQuote();	
+		if (quote != null) {
+			return quote.getQuote();
 		}
 		return null;
 	}

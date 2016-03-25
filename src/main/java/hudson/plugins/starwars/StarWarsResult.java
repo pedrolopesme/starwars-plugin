@@ -9,7 +9,7 @@ import hudson.model.Result;
  *
  */
 public enum StarWarsResult {
-
+	
 	/**
 	 * When the light side wins.
 	 */
@@ -24,7 +24,6 @@ public enum StarWarsResult {
 	 * When there's a disturbing lack of faith.
 	 */
 	FAIL("fail");
-
 	
 	/**
 	 * Result's description
@@ -74,11 +73,11 @@ public enum StarWarsResult {
 	 * @return the star wars result
 	 */
 	public static StarWarsResult get(String result) {
-		if (SUCCESS.getDescription().equals("success")) {
+		if (SUCCESS.getDescription().equals(result)) {
 			return SUCCESS;
-		} else if (FAIL.getDescription().equals("fail")) {
+		} else if (FAIL.getDescription().equals(result)) {
 			return FAIL;
-		} else if (ALERT.getDescription().equals("alert")) {
+		} else if (ALERT.getDescription().equals(result)) {
 			return ALERT;
 		}
 		return null;
