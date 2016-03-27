@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quotes>
-	<quote author="luke" result="success">
-		Test - SUCESS
-	</quote>
-	<quote author="luke" result="fail">
-		Test - FAIL
-	</quote>
-	<quote author="luke" result="alert">
-		Test - ALERT
-	</quote>
+	<!-- Successes -->
+	<quote author="obiWan" result="success"> In my experience there is no such thing as luck. </quote>
+	<quote author="hanSolo" result="success"> Great, kid. Don’t get cocky. </quote>
+	<quote author="yoda" result="success">  My ally is the Force, and a powerful ally it is. </quote>
+	<quote author="obiWan" result="success"> The Force will be with you always. </quote>
+	<quote author="darthVader" result="success"> The Force is strong with this one. </quote>
+	<quote author="luke" result="success"> You serve your master well. And you will be rewarded. </quote>
+	<quote author="r2d2" result="success"> Beep beep boop. </quote>
+	<quote author="palpatine" result="success"> I can feel you anger. It gives you focus. It makes you stronger. </quote>
+	<quote author="darthVader" result="success"> Impressive... Most impressive. Obi-Wan has taught you well, you have controled your fear. </quote>
+	
+	<!-- Failures -->
+	<quote author="hanSolo" result="fail"> It’s not my fault. </quote>
+	<quote author="yoda" result="fail"> Do. Or do not. There is no try. </quote>
+	<quote author="leia" result="fail"> Somebody has to save our skins. </quote>
+	<quote author="darthVader" result="fail"> I find your lack of faith disturbing. </quote>
+	<quote author="ackbar" result="fail"> It’s a trap! </quote>
+	<quote author="obiWan" result="fail"> Use the force, Luke. </quote>
+	<quote author="obiWan" result="fail"> I feel something terrible has happened. </quote>
+	<quote author="leia" result="fail"> Help me ObiWan Kenobi, you are my only hope. </quote>
+	<quote author="yoda" result="fail"> I cannot teach him. The boy has no patience. </quote>
+	<quote author="c3po" result="fail"> Wait. Oh My! What have you done? </quote>
+	
+	<!-- Alerts -->
+	<quote author="luke" result="alert"> I’ve got a bad feeling about this. </quote>
+	<quote author="hanSolo" result="alert"> Never tell me the odds. </quote>
+	<quote author="yoda" result="alert"> The fear of loss is a path to the dark side. </quote>
+	<quote author="luke" result="alert"> I won’t fail you. I’m not afraid. </quote>
+	<quote author="yoda" result="alert"> Fear leads to anger, anger leads to hate, hate leads to suffering. </quote>
+	<quote author="obiWan" result="alert"> I feel like a great disturbance in the Force. </quote>
+	<quote author="luke" result="alert"> I can save him. I can turn him back to the good side. I have to try. </quote>
 </quotes>
