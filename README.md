@@ -2,7 +2,7 @@
 
 This plugin adds an absolutely delightful feature to Jenkins:
 depending if your build succeeds, fails, or is unstable, it will show one of the 
-classic pictures of Star Wars accordingly to the build result.
+classic quotes of Star Wars accordingly to the build result.
 
 ### Build Status
 [![Build Status](https://travis-ci.org/pedrolopesme/starwars-plugin.png?branch=master)](https://travis-ci.org/pedrolopesme/starwars-plugin)
