@@ -26,6 +26,17 @@ classic quotes of Star Wars accordingly to the build result.
 While this plugin is not available on oficial Jenkins plugins repository, you can import it directly via Jenkins Plugins Upload form, under the path : *Jenkins* > *Manage Jenkins* > *Manage Plugins* > *Advanced* > Upload Plugin. 
 
  ![Upload Plugin](https://raw.githubusercontent.com/pedrolopesme/starwars-plugin/master/samples/plugin_install.png)
+ 
+ The .hpi file with the latest version of Star Wars Jenkins Plugin is available on **[https://github.com/pedrolopesme/starwars-plugin/raw/master/plugin/starwars-latest.hpi](https://github.com/pedrolopesme/starwars-plugin/raw/master/plugin/starwars-latest.hpi)** 
+
+After installed, you'll need to restart your Jenkins to load the plugin properly. 
+
+### Activation
+
+Once installed, you can activate the Star Wars Jenkins Plugin as a *Post-build action*, inside the Job Configuration form:
+
+![Plugin Activation](https://raw.githubusercontent.com/pedrolopesme/starwars-plugin/master/samples/plugin_activation1.png)
+![Plugin Activation](https://raw.githubusercontent.com/pedrolopesme/starwars-plugin/master/samples/plugin_activation2.png)
 
 ### Contribute
 
