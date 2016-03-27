@@ -1,11 +1,11 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:local="local">
     <tr>
-        <td><img src="${rootURL}/plugin/starwars/images/icon.jpg" width="48" height="48" alt="${it.displayName} Icon"/></td>
-        <td style="vertical-align:middle"><j:out value="${it.quoteContent}"/></td>
+        <td><img src="${rootURL}/plugin/starwars/images/authors/${it.quoteAuthorIcon}" width="48" height="48" alt="${it.displayName} Icon" title="${it.quoteAuthor}"/></td>
+        <td style="vertical-align:middle"><j:out value="${it.quoteContent}"/> - <j:out value="${it.quoteAuthor}"/> </td>
     </tr>
     <style>
         .starwars-style {
-          background-image: url(${rootURL}/plugin/starwars/images/<j:out value="${it.result.toString().toLowerCase()}"/>.jpg);
+          background-image: url(${rootURL}/plugin/starwars/images/results/<j:out value="${it.result.toString().toLowerCase()}"/>.jpg);
           background-repeat: no-repeat;
           background-position: bottom right;
           padding-bottom: 270px !important;
