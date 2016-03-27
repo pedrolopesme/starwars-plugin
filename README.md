@@ -21,6 +21,12 @@ classic quotes of Star Wars accordingly to the build result.
 * Build Failure:
 ![Project Summary](https://raw.githubusercontent.com/pedrolopesme/starwars-plugin/master/samples/build_error.png)
 
+### Installation
+
+While this plugin is not available on oficial Jenkins plugins repository, you can import it directly via Jenkins Plugins Upload form, under the path : *Jenkins* > *Manage Jenkins* > *Manage Plugins* > *Advanced* > Upload Plugin. 
+
+ ![Upload Plugin](https://raw.githubusercontent.com/pedrolopesme/starwars-plugin/master/samples/plugin_install.png)
+
 ### Contribute
 
 Star Wars Jenkins Plugin is an **[OPEN Open Source Project](https://github.com/pedrolopesme/starwars-plugin/blob/master/CONTRIBUTING.md)**. Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit.
