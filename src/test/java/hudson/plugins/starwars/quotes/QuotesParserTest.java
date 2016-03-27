@@ -47,7 +47,7 @@ public class QuotesParserTest extends TestCase {
 		expectedQuote.setAuthor(QuoteAuthor.LUKE);
 		expectedQuote.setQuote("FailedTest-1");
 		expectedQuote.setResult(StarWarsResult.FAIL);
-		
+
 		Document dummyDocument = getDocument(expectedQuote, 1);
 
 		Set<Quote> expected = new HashSet<Quote>();
@@ -61,14 +61,14 @@ public class QuotesParserTest extends TestCase {
 
 		Quote firstQuote = result.iterator().next();
 		assertFalse(firstQuote.equals(expectedQuote));
-		
+
 		expectedQuote = new Quote();
 		expectedQuote.setAuthor(QuoteAuthor.LUKE);
 		expectedQuote.setQuote("Test-1");
 		expectedQuote.setResult(StarWarsResult.SUCCESS);
 		dummyDocument = getDocument(expectedQuote, 1);
 		result = parser.parseQuotesDocument(dummyDocument);
-		
+
 		Iterator<Quote> iterator = result.iterator();
 		firstQuote = iterator.next();
 		assertEquals(expectedQuote, firstQuote);
@@ -82,10 +82,10 @@ public class QuotesParserTest extends TestCase {
 		expectedQuote.setAuthor(QuoteAuthor.LUKE);
 		expectedQuote.setQuote("Test");
 		expectedQuote.setResult(StarWarsResult.SUCCESS);
-		
+
 		Document dummyDocument = getDocument(expectedQuote, 5);
 
-		QuotesParser parser = new QuotesParser();		
+		QuotesParser parser = new QuotesParser();
 		Set<Quote> result = parser.parseQuotesDocument(dummyDocument);
 
 		assertEquals(result.size(), 5);
@@ -97,8 +97,8 @@ public class QuotesParserTest extends TestCase {
 
 		Quote lastQuote = null;
 		Iterator<Quote> iterator = result.iterator();
-		while(iterator.hasNext()){
-			lastQuote=iterator.next();
+		while (iterator.hasNext()) {
+			lastQuote = iterator.next();
 		}
 		expectedQuote.setQuote("Test-5");
 		assertEquals(expectedQuote, lastQuote);

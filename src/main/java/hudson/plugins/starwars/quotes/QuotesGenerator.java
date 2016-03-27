@@ -6,9 +6,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
-
-import hudson.plugins.starwars.StarWarsRecorder;
 import hudson.plugins.starwars.StarWarsResult;
 
 /**
@@ -17,8 +14,6 @@ import hudson.plugins.starwars.StarWarsResult;
  * @author pedromendes
  */
 public class QuotesGenerator {
-
-	private static final Logger LOGGER = Logger.getLogger(StarWarsRecorder.class.getName());
 	
 	/**
 	 * Store quotes, grouping them by Result (success, fail, alert)
@@ -58,7 +53,6 @@ public class QuotesGenerator {
 		Set<Quote> quotes = quotesParser.getQuotes();
 		if (quotes != null && quotes.size() > 0) {
 			for (Quote quote : quotes) {
-				LOGGER.info("ADDING QUOTE :" + quote);
 				add(quote);
 			}
 		}
