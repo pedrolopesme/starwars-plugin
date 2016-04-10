@@ -23,7 +23,7 @@ classic quotes of Star Wars accordingly to the build result.
 
 ### Installation
 
-While this plugin is not available on oficial Jenkins plugins repository, you can import it directly via Jenkins Plugins Upload form, under the path : *Jenkins* > *Manage Jenkins* > *Manage Plugins* > *Advanced* > Upload Plugin. 
+Unfortently, this plugin won't be published on the oficial Jeknins Plugins repository due to fear of legal copyright implications involving Star Wars term (https://issues.jenkins-ci.org/browse/HOSTING-65). But you can import it directly via Jenkins Plugins Upload form, under the path : *Jenkins* > *Manage Jenkins* > *Manage Plugins* > *Advanced* > Upload Plugin. 
 
  ![Upload Plugin](https://raw.githubusercontent.com/pedrolopesme/starwars-plugin/master/samples/plugin_install.png)
  
